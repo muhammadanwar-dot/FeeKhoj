@@ -1,0 +1,105 @@
+{
+  "jurisdiction": "Karnataka",
+  "statute": "Karnataka Court-Fees and Suits Valuation Act, 1958",
+  "last_text_used": "English text as opened from India Code / Karnataka DPAL PDFs accessed on 2026-04-19",
+  "disclaimer": "Prototype for educational use. It covers only selected Karnataka civil suit categories and does not replace court filing advice.",
+  "sources": [
+    {
+      "label": "Section 21 - suits for money",
+      "summary": "Fee computed on amount claimed.",
+      "citation": "Section 21"
+    },
+    {
+      "label": "Section 24(a) - declaration + possession",
+      "summary": "Fee on market value of the property or Rs 1,000, whichever is higher.",
+      "citation": "Section 24(a)"
+    },
+    {
+      "label": "Section 24(b) - declaration + consequential injunction concerning immovable property",
+      "summary": "Fee on one-half of market value of the property or Rs 1,000, whichever is higher.",
+      "citation": "Section 24(b)"
+    },
+    {
+      "label": "Section 24(d) - other declaratory suits",
+      "summary": "Fee on amount at which relief is valued in plaint or Rs 1,000, whichever is higher.",
+      "citation": "Section 24(d)"
+    },
+    {
+      "label": "Section 26(a) - injunction with reference to immovable property where title is denied / in issue",
+      "summary": "Fee on one-half of market value of the property or Rs 1,000, whichever is higher.",
+      "citation": "Section 26(a)"
+    },
+    {
+      "label": "Section 26(c) - other injunction suits",
+      "summary": "Fee on amount at which relief is valued in plaint or Rs 1,000, whichever is higher.",
+      "citation": "Section 26(c)"
+    },
+    {
+      "label": "Schedule I Article 1 - ad valorem fee table",
+      "summary": "Slab-based fee table for plaints, written statements, set-offs/counterclaims and memoranda of appeal.",
+      "citation": "Schedule I, Article 1"
+    }
+  ],
+  "supported_case_types": [
+    {
+      "id": "money_suit",
+      "name": "Money recovery / damages / compensation suit",
+      "requires": ["claim_amount"],
+      "charging_rule": "ad_valorem_on_claim_amount",
+      "section": "Section 21"
+    },
+    {
+      "id": "declaration_possession",
+      "name": "Declaration + possession of immovable property",
+      "requires": ["property_market_value"],
+      "charging_rule": "ad_valorem_on_market_value_min_1000",
+      "section": "Section 24(a)"
+    },
+    {
+      "id": "declaration_injunction_immovable",
+      "name": "Declaration + consequential injunction concerning immovable property",
+      "requires": ["property_market_value"],
+      "charging_rule": "ad_valorem_on_half_market_value_min_1000",
+      "section": "Section 24(b)"
+    },
+    {
+      "id": "other_declaration",
+      "name": "Other declaratory suit",
+      "requires": ["relief_value"],
+      "charging_rule": "ad_valorem_on_relief_value_min_1000",
+      "section": "Section 24(d)"
+    },
+    {
+      "id": "injunction_title_denied",
+      "name": "Injunction concerning immovable property where title is denied / in issue",
+      "requires": ["property_market_value"],
+      "charging_rule": "ad_valorem_on_half_market_value_min_1000",
+      "section": "Section 26(a)"
+    },
+    {
+      "id": "other_injunction",
+      "name": "Other injunction suit",
+      "requires": ["relief_value"],
+      "charging_rule": "ad_valorem_on_relief_value_min_1000",
+      "section": "Section 26(c)"
+    }
+  ],
+  "ad_valorem_slabs": [
+    {"min_exclusive": 0, "max_inclusive": 15000, "base_fee": 0, "rate": 0.025, "base_amount": 0},
+    {"min_exclusive": 15000, "max_inclusive": 75000, "base_fee": 375, "rate": 0.075, "base_amount": 15000},
+    {"min_exclusive": 75000, "max_inclusive": 250000, "base_fee": 4875, "rate": 0.07, "base_amount": 75000},
+    {"min_exclusive": 250000, "max_inclusive": 500000, "base_fee": 17125, "rate": 0.065, "base_amount": 250000},
+    {"min_exclusive": 500000, "max_inclusive": 750000, "base_fee": 33375, "rate": 0.06, "base_amount": 500000},
+    {"min_exclusive": 750000, "max_inclusive": 1000000, "base_fee": 48375, "rate": 0.055, "base_amount": 750000},
+    {"min_exclusive": 1000000, "max_inclusive": 1500000, "base_fee": 62125, "rate": 0.05, "base_amount": 1000000},
+    {"min_exclusive": 1500000, "max_inclusive": 2000000, "base_fee": 87125, "rate": 0.045, "base_amount": 1500000},
+    {"min_exclusive": 2000000, "max_inclusive": 2500000, "base_fee": 109625, "rate": 0.04, "base_amount": 2000000},
+    {"min_exclusive": 2500000, "max_inclusive": 3000000, "base_fee": 129625, "rate": 0.035, "base_amount": 2500000},
+    {"min_exclusive": 3000000, "max_inclusive": 4000000, "base_fee": 147125, "rate": 0.03, "base_amount": 3000000},
+    {"min_exclusive": 4000000, "max_inclusive": 5000000, "base_fee": 177125, "rate": 0.025, "base_amount": 4000000},
+    {"min_exclusive": 5000000, "max_inclusive": 6000000, "base_fee": 202125, "rate": 0.02, "base_amount": 5000000},
+    {"min_exclusive": 6000000, "max_inclusive": 7000000, "base_fee": 222125, "rate": 0.015, "base_amount": 6000000},
+    {"min_exclusive": 7000000, "max_inclusive": 8000000, "base_fee": 237125, "rate": 0.01, "base_amount": 7000000},
+    {"min_exclusive": 8000000, "max_inclusive": null, "base_fee": 247125, "rate": 0.005, "base_amount": 8000000}
+  ]
+}
